@@ -20,10 +20,10 @@ FRAMES = 90         # 90 frames at 50 ms: 4.5 s loop
 BG = (13, 16, 22)
 
 
-def load(path):
+def load(path, skip):
     im = Image.open(path)
     frames = [f.convert('RGB').resize((CELL, CELL), Image.LANCZOS) for f in ImageSequence.Iterator(im)]
-    return frames
+    return frames[int(len(frames) * skip):] or frames
 
 
 def main():
@@ -36,7 +36,10 @@ def main():
         names = [l.strip() for l in open(order_file, encoding='utf-8') if l.strip()]
     else:
         names = sorted(os.path.splitext(os.path.basename(p))[0] for p in glob.glob(os.path.join(src, '*.gif')))
-    clips = {n: load(os.path.join(src, n + '.gif')) for n in names}
+    # SKIP=0.4 drops the first 40 % of each clip: the expression GIFs start with the change
+    # from the normal face, and without it every cell of a grid would open on the same face
+    skip = float(os.environ.get('SKIP', '0'))
+    clips = {n: load(os.path.join(src, n + '.gif'), skip) for n in names}
 
     cols = min(cols, len(names))
     rows = (len(names) + cols - 1) // cols
