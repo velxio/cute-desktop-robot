@@ -61,6 +61,58 @@ emar rcs libraylib.a *.o
   `robot_emu.exe --script "2:expr=Happy; 3:act=Rain; 5:shot=out.png; 6:quit"`.
 - **`facetool`** renders every expression and act as a GIF: `mingw32-make gifs`.
 
+## Every expression and animation
+
+Rendered by `facetool` from the same engine as the firmware. Each GIF loops a few seconds of every face at once. Rebuild them with `mingw32-make gifs` and `tools/make_grid.py`.
+
+### 56 expressions, by mood
+
+**Calm and thinking** (16)
+
+![Calm and thinking expressions of VoCat Eyes, animated](doc/faces-normal.gif)
+
+**Happy** (15)
+
+![Happy expressions of VoCat Eyes, animated](doc/faces-happy.gif)
+
+**Sad** (8)
+
+![Sad expressions of VoCat Eyes, animated](doc/faces-sad.gif)
+
+**Angry** (6)
+
+![Angry expressions of VoCat Eyes, animated](doc/faces-angry.gif)
+
+**Surprised and alert** (7)
+
+![Surprised and alert expressions of VoCat Eyes, animated](doc/faces-alert.gif)
+
+**Sleepy** (4)
+
+![Sleepy expressions of VoCat Eyes, animated](doc/faces-sleepy.gif)
+
+### 47 animations, by family
+
+**Body language** (9)
+
+![Body language: VoCat Eyes animations](doc/acts-body.gif)
+
+**Screen effects** (5)
+
+![Screen effects: VoCat Eyes animations](doc/acts-screen.gif)
+
+**With props** (18)
+
+![With props: VoCat Eyes animations](doc/acts-props.gif)
+
+**Everyday things** (9)
+
+![Everyday things: VoCat Eyes animations](doc/acts-everyday.gif)
+
+**Games and round-screen effects** (6)
+
+![Games and round-screen effects: VoCat Eyes animations](doc/acts-games.gif)
+
 ## Build and flash the firmware
 
 Libraries: Arduino core for ESP32 **3.3.x**, Arduino_GFX 1.6.5, ArduinoWebsockets 0.5.4,

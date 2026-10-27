@@ -29,6 +29,58 @@ redonda táctil de 360 px, dos micrófonos, altavoz, IMU y batería). Es el moto
 - `firmware_backup/`: volcado completo del firmware original de fábrica (no se sube al git).
 - `secrets.h`: Wi-Fi y clave de Gemini. No se sube al git.
 
+## Todas las expresiones y animaciones
+
+Generadas por `facetool` con el mismo motor que el firmware.
+
+### 56 expresiones, por estado de ánimo
+
+**Tranquilo y pensando** (16)
+
+![Tranquilo y pensando](doc/faces-normal.gif)
+
+**Feliz** (15)
+
+![Feliz](doc/faces-happy.gif)
+
+**Triste** (8)
+
+![Triste](doc/faces-sad.gif)
+
+**Enfadado** (6)
+
+![Enfadado](doc/faces-angry.gif)
+
+**Sorpresa y alerta** (7)
+
+![Sorpresa y alerta](doc/faces-alert.gif)
+
+**Sueño** (4)
+
+![Sueño](doc/faces-sleepy.gif)
+
+### 47 animaciones, por familia
+
+**Gestos** (9)
+
+![Gestos](doc/acts-body.gif)
+
+**Efectos de pantalla** (5)
+
+![Efectos de pantalla](doc/acts-screen.gif)
+
+**Con objetos** (18)
+
+![Con objetos](doc/acts-props.gif)
+
+**Cosas cotidianas** (9)
+
+![Cosas cotidianas](doc/acts-everyday.gif)
+
+**Juegos y efectos del cristal redondo** (6)
+
+![Juegos y efectos del cristal redondo](doc/acts-games.gif)
+
 ## Compilar y grabar
 
 ```
