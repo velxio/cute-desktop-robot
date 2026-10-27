@@ -1,0 +1,13 @@
+# private: Wi-Fi password and Gemini API key (copy secrets.example.h to secrets.h)
+secrets.h
+# factory firmware dump of the author's board
+firmware_backup/
+# build output
+build/
+web/dist/
+emulator/*.o
+emulator/*.d
+emulator/*.exe
+emulator/captures/
+assets/3d/source/*.zip
+__pycache__/

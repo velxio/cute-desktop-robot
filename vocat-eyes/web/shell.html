@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cute Desktop Robot - emulator</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #0d1016; overflow: hidden; }
+  body { display: flex; align-items: center; justify-content: center; }
+  /* the app draws a 1380 x 900 window; the page scales it to fit, keeping its shape */
+  #canvas { display: block; outline: none; touch-action: none; image-rendering: auto; }
+  #loading { position: absolute; color: #8a93a6; font: 14px system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<div id="loading">loading the robot…</div>
+<canvas id="canvas" tabindex="0" oncontextmenu="event.preventDefault()"></canvas>
+<script>
+  const W = 1380, H = 900;
+  const canvas = document.getElementById('canvas');
+  function fit() {
+    const s = Math.min(window.innerWidth / W, window.innerHeight / H);
+    canvas.style.width = Math.floor(W * s) + 'px';
+    canvas.style.height = Math.floor(H * s) + 'px';
+  }
+  var Module = {
+    canvas,
+    print: t => console.log(t),
+    printErr: t => console.warn(t),
+    onRuntimeInitialized() { document.getElementById('loading').remove(); setTimeout(fit, 50); },
+  };
+  window.addEventListener('resize', fit);
+  canvas.addEventListener('pointerdown', () => canvas.focus());
+  fit();
+</script>
+{{{ SCRIPT }}}
+</body>
+</html>

@@ -1,0 +1,6 @@
+secrets.h
+build/
+dist/
+*.o
+*.d
+*.exe
